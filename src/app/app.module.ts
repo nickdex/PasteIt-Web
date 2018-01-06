@@ -5,11 +5,14 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { RouterModule } from '@angular/router';
 
+import { AngularMaterialModule } from './angular-material-module/angular-material.module';
 import { AppComponent } from './app.component';
-import { AngularFireService } from './provider/angular-fire.service';
-import { environment } from '../environments/environment';
-import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
+import { LoginComponent } from './login/login.component';
+import { FirebaseAuthService } from './provider/firebase-auth.service';
+import { MapperService } from './provider/mapper.service';
+import { StoreService } from './provider/store.service';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, MainComponent],
@@ -23,9 +26,10 @@ import { MainComponent } from './main/main.component';
       { path: 'main', component: MainComponent },
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: '**', redirectTo: 'login', pathMatch: 'full' }
-    ])
+    ]),
+    AngularMaterialModule
   ],
-  providers: [AngularFireService],
+  providers: [FirebaseAuthService, StoreService, MapperService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
