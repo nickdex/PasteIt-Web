@@ -13,12 +13,12 @@ export class LoginComponent {
   constructor(public _afService: AngularFireService, private _router: Router) {}
 
   login(): void {
-    this._afService.logInWithGoogle().subscribe(
-      (data: any) => {
-        console.log(JSON.stringify(data));
-      },
-      err_msg => console.error(err_msg),
-      () => this._router.navigate([''])
-    );
+    this._afService
+      .logInWithGoogle()
+      .subscribe(
+        data => console.log(JSON.stringify(data)),
+        err_msg => console.error(err_msg),
+        () => this._router.navigate(['/main'])
+      );
   }
 }

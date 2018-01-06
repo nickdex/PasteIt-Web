@@ -9,9 +9,10 @@ import { AppComponent } from './app.component';
 import { AngularFireService } from './provider/angular-fire.service';
 import { environment } from '../environments/environment';
 import { LoginComponent } from './login/login.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [AppComponent, LoginComponent, MainComponent],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, 'piw'),
@@ -19,6 +20,7 @@ import { LoginComponent } from './login/login.component';
     AngularFireAuthModule,
     RouterModule.forRoot([
       { path: 'login', component: LoginComponent },
+      { path: 'main', component: MainComponent },
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: '**', redirectTo: 'login', pathMatch: 'full' }
     ])
