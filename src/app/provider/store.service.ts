@@ -6,6 +6,7 @@ import { IFirebaseClip } from '../model/firebase-clip';
 import { MapperService } from './mapper.service';
 
 import 'rxjs/add/observable/from';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class StoreService {
