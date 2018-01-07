@@ -4,7 +4,7 @@ import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class AngularFireService {
+export class FirebaseAuthService {
   constructor(public afAuth: AngularFireAuth) {}
 
   logInWithGoogle(): Observable<firebase.auth.UserCredential> {

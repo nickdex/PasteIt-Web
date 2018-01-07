@@ -1,8 +1,9 @@
-import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import 'rxjs/add/operator/do';
+import { Router } from '@angular/router';
 
-import { AngularFireService } from '../provider/angular-fire.service';
+import { FirebaseAuthService } from '../provider/firebase-auth.service';
+
+import 'rxjs/add/operator/do';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { AngularFireService } from '../provider/angular-fire.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(public _afService: AngularFireService, private _router: Router) {}
+  constructor(public _afService: FirebaseAuthService, private _router: Router) {}
 
   login(): void {
     this._afService
