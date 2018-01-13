@@ -1,6 +1,8 @@
-<mat-card class="clip-card" *ngFor='let clip of clips'>
-  <mat-card-header>
-    <mat-card-title>{{ clip.text }}</mat-card-title>
-    <mat-card-subtitle>{{ clip.timestamp | date: 'mediumTime' }}</mat-card-subtitle>
-  </mat-card-header>
-</mat-card>
+<mat-list class="clip-list">
+  <mat-card class="clip-card" *ngFor='let clip of clips'>
+    <mat-card-header>
+      <mat-card-title>{{ clip.text }}</mat-card-title>
+      <mat-card-subtitle>{{ clip.timestamp | date: 'mediumTime' }}</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+</mat-list>

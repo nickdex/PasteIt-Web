@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { environment } from '../../environments/environment';
 import { FirebaseAuthService } from '../provider/firebase-auth.service';
@@ -13,10 +13,14 @@ import { FirebaseAuthService } from '../provider/firebase-auth.service';
   imports: [
     CommonModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, 'piw'),
-    AngularFirestoreModule,
+    AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  exports: [AngularFireModule, AngularFirestoreModule, AngularFireAuthModule],
+  exports: [
+    AngularFireModule,
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
+  ],
   providers: [FirebaseAuthService]
 })
 export class FirebaseModule {}

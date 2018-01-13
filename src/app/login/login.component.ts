@@ -17,7 +17,7 @@ export class LoginComponent {
     this._afService
       .logInWithGoogle()
       .subscribe(
-        data => console.log(JSON.stringify(data)),
+        data => console.log(JSON.stringify(data.user.getIdToken())),
         err_msg => console.error(err_msg),
         () => this._router.navigate(['/main'])
       );
